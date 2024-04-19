@@ -1,0 +1,1 @@
+import{d as o,r as a,v as l,x as e,y as n,L as t,t as c}from"./DtFRZzgB.js";const m=e("h1",null,"Home",-1),d=o({__name:"index",setup(p){const r=a(""),s=a("");return(_,u)=>(c(),l("div",null,[m,e("p",null,"Gamer 1 - "+n(t(r)),1),e("p",null,"Gamer 2 - "+n(t(s)),1)]))}});export{d as default};

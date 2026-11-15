@@ -859,6 +859,74 @@
     text-overflow: ellipsis;
   }
 
+  /* ===== Projects ===== */
+  .project-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 32px;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .project-card:hover {
+    border-color: rgba(99, 102, 241, 0.45);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+  }
+
+  .project-shot {
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .project-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .project-card:hover .project-shot img { transform: scale(1.03); }
+
+  .project-meta {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-3);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .project-info h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .project-info p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 18px;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+
+  .project-links .btn { padding: 11px 22px; font-size: 14px; }
+
   footer {
     text-align: center;
     padding: 40px 20px;
@@ -893,9 +961,10 @@
     .edu-card { flex-direction: column; text-align: center; }
     .avatar { width: 150px; height: 150px; }
     .contact-value { font-size: 0.85rem; }
+    .project-card { grid-template-columns: 1fr; gap: 20px; padding: 18px; }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     nav a.nav-link { display: none; }
   }
 </style>
@@ -910,6 +979,7 @@
   <a href="#about" class="nav-link" data-ru="Обо мне" data-en="About">Обо мне</a>
   <a href="#skills" class="nav-link" data-ru="Навыки" data-en="Skills">Навыки</a>
   <a href="#experience" class="nav-link" data-ru="Опыт" data-en="Experience">Опыт</a>
+  <a href="#projects" class="nav-link" data-ru="Проекты" data-en="Projects">Проекты</a>
   <a href="#education" class="nav-link" data-ru="Образование" data-en="Education">Образование</a>
   <a href="#contact" class="nav-link" data-ru="Контакты" data-en="Contact">Контакты</a>
   <div class="lang-switch">
@@ -1057,7 +1127,7 @@
         <div class="timeline-header">
           <div class="company">
             AO BFG
-            <span class="badge current" data-ru="Текущее место" data-en="Current">Текущее место</span>
+            
           </div>
           <div class="period" data-ru="Фев 2023 — Июнь 2026 · 3 г 5 мес" data-en="Feb 2023 — Jun 2026 · 3 yr 5 mo">Фев 2023 — Июнь 2026 · 3 г 5 мес</div>
         </div>
@@ -1136,6 +1206,39 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title reveal" data-ru="Проекты" data-en="Projects">Проекты</h2>
+
+  <div class="projects-list reveal">
+    <article class="project-card">
+      <a class="project-shot" href="https://gev566.github.io/gev566.github.io_website/" target="_blank" rel="noopener">
+        <img src="project-aobfg.jpg" width="1200" height="671" loading="lazy" alt="Главная страница сайта AO BFG" data-ru-alt="Главная страница сайта AO BFG" data-en-alt="AO BFG website home page">
+      </a>
+      <div class="project-info">
+        <div class="project-meta" data-ru="2024 · Frontend-разработка" data-en="2024 · Frontend development">2024 · Frontend-разработка</div>
+        <h3 data-ru="Корпоративный сайт AO BFG" data-en="AO BFG corporate website">Корпоративный сайт AO BFG</h3>
+        <p data-ru="Многостраничный сайт компании — разработчика систем виртуализации и средств защиты информации: главная, страница о компании, каталог продуктов, вакансии и контакты. Три языка: русский, английский и армянский. Адаптивная вёрстка для телефонов и планшетов." data-en="Multi-page website for a developer of virtualization and information security software: home, about, product catalogue, careers and contacts. Three languages: Russian, English and Armenian. Responsive layout for phones and tablets.">Многостраничный сайт компании — разработчика систем виртуализации и средств защиты информации: главная, страница о компании, каталог продуктов, вакансии и контакты. Три языка: русский, английский и армянский. Адаптивная вёрстка для телефонов и планшетов.</p>
+        <div class="skill-tags">
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">jQuery</span>
+          <span class="skill">Bootstrap</span>
+        </div>
+        <div class="project-links">
+          <a href="https://gev566.github.io/gev566.github.io_website/" target="_blank" rel="noopener" class="btn btn-primary">
+            <span data-ru="Открыть сайт" data-en="Open the site">Открыть сайт</span>
+          </a>
+          <a href="https://github.com/gev566/gev566.github.io_website" target="_blank" rel="noopener" class="btn btn-outline">
+            <span data-ru="Код на GitHub" data-en="Code on GitHub">Код на GitHub</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- EDUCATION -->
 <section id="education">
   <h2 class="section-title reveal" data-ru="Образование" data-en="Education">Образование</h2>
@@ -1143,9 +1246,9 @@
   <div class="edu-card reveal">
     <div class="edu-icon">🎓</div>
     <div class="edu-info">
-      <h3 data-ru="Ереванский Государственный Университет" data-en="Yerevan State University">Ереванский Государственный Университет</h3>
-      <div class="field" data-ru="Логистика" data-en="Logistics">Логистика</div>
-      <div class="year" data-ru="2016 · Среднее специальное" data-en="2016 · Associate Degree">2016 · Среднее специальное</div>
+      <h3 data-ru="Yerevan College of Legal Economics and Management" data-en="Yerevan College of Legal Economics and Management">Yerevan College of Legal Economics and Management</h3>
+      <div class="field" data-ru="Менеджмент" data-en="Management">Менеджмент</div>
+      <div class="year" data-ru="2013–2016 · Среднее специальное" data-en="2013–2016 · Associate Degree">2013–2016 · Среднее специальное</div>
     </div>
   </div>
 </section>
@@ -1163,7 +1266,7 @@
       </div>
     </a>
 
-    <a href="https://t.me/+37433011032" target="_blank" rel="noopener" class="contact-card">
+    <a href="https://t.me/Gevorg_Babloyan" target="_blank" rel="noopener" class="contact-card">
       <div class="contact-icon">✈</div>
       <div class="contact-info">
         <span class="contact-label" data-ru="Телефон / Telegram" data-en="Phone / Telegram">Телефон / Telegram</span>
@@ -1171,11 +1274,11 @@
       </div>
     </a>
 
-    <a href="https://github.com/Gev1998" target="_blank" rel="noopener" class="contact-card">
+    <a href="https://github.com/gev566" target="_blank" rel="noopener" class="contact-card">
       <div class="contact-icon">⌘</div>
       <div class="contact-info">
         <span class="contact-label">GitHub</span>
-        <span class="contact-value">Gev1998</span>
+        <span class="contact-value">gev566</span>
       </div>
     </a>
 
